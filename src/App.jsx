@@ -4,6 +4,9 @@ export default function App() {
     const yItem = "";
     const zItem = "";
     const ukus = "us";
+    function buttonClicked(){
+      showStory = true;
+    }
     return (
       <>
         <div>
@@ -17,7 +20,7 @@ export default function App() {
           <input type="radio" value="uk" checked={ukus === "uk"} />
         </div>
         <div>
-          <button>Generate random story</button>
+          <button onClick={buttonClicked}>Generate random story</button>
         </div>
         {showStory && (
           <p>
