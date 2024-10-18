@@ -10,7 +10,7 @@ export default function App() {
     return array[random];
   }
   function buttonClicked() {
-    showStory = true;
+    //showStory = true;
   }
   return (
     <>
