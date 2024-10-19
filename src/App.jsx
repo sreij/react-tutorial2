@@ -37,9 +37,9 @@ export default function App() {
       </div>
       {showStory && (
         <p>
-          It was 94 fahrenheit outside, so {randomValueFromArray(xItem)} went for a walk. When they
-          got to {randomValueFromArray(yItem)}, they stared in horror for a few moments, then {randomValueFromArray(zItem)}.
-          Bob saw the whole thing, but was not surprised — {randomValueFromArray(xItem)} weighs 300
+          It was 94 fahrenheit outside, so {xItem} went for a walk. When they
+          got to {yItem}, they stared in horror for a few moments, then {zItem}.
+          Bob saw the whole thing, but was not surprised — {xItem} weighs 300
           pounds, and it was a hot day.
         </p>
       )}
