@@ -1,8 +1,13 @@
+import {useState} from "react";
+
 export default function App() {
-  const showStory = false;
-  const xItem = ["Willy the Goblin","Big Daddy","Father Christmas"];
-  const yItem = ["the soup kitchen","Disneyland","the White House"];
-  const zItem = ["spontaneously combusted","melted into a puddle on the sidewalk","turned into a slug and crawled away"];
+  const [showStory, setShow] = useState(false);
+  const insertX = [["Willy the Goblin"],["Big Daddy"],["Father Christmas"]];
+  const insertY = [["the soup kitchen"],["Disneyland"],["the White House"]];
+  const insertZ = [["spontaneously combusted"],["melted into a puddle on the sidewalk"],["turned into a slug and crawled away"]];
+  const [xItem, setX] = useState("");
+  const [yItem, setY] = useState("");
+  const [zItem, setZ] = useState("");
   const ukus = "us";
 
   function randomValueFromArray(array){
@@ -10,7 +15,10 @@ export default function App() {
     return array[random];
   }
   function buttonClicked() {
-    //showStory = true;
+    setShow(true);
+    setX(randomValueFromArray(insertX));
+    setY(randomValueFromArray(insertY));
+    setZ(randomValueFromArray(insertZ));
   }
   return (
     <>
