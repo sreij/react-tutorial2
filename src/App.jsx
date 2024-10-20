@@ -16,7 +16,7 @@ export default function App() {
     return array[random];
   }
 
-  function handleChange(event){
+  function result(event){
     if(event.target.value !== ""){
       setName(event.target.value);
     }else{
@@ -34,7 +34,7 @@ export default function App() {
     <>
       <div>
         <label htmlFor="customname">Enter custom name:</label>
-        <input type="text" placeholder=""  onChange={handleChange} />
+        <input type="text" placeholder=""  onChange={result} />
       </div>
       <div>
         <label htmlFor="us">US</label>
