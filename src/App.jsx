@@ -1,6 +1,7 @@
 import {useState} from "react";
 
 export default function App() {
+  const [name, setName] = useState("Bob");
   const [showStory, setShow] = useState(false);
   const insertX = [["Willy the Goblin"],["Big Daddy"],["Father Christmas"]];
   const insertY = [["the soup kitchen"],["Disneyland"],["the White House"]];
@@ -14,6 +15,15 @@ export default function App() {
     const random = Math.floor(Math.random()*array.length);
     return array[random];
   }
+
+  function handleChange(event){
+    if(event.target.value !== ""){
+      setName(event.target.value);
+    }else{
+      setName("Bob");
+    }
+  }
+  
   function buttonClicked() {
     setShow(true);
     setX(randomValueFromArray(insertX));
@@ -24,7 +34,7 @@ export default function App() {
     <>
       <div>
         <label htmlFor="customname">Enter custom name:</label>
-        <input type="text" placeholder="" />
+        <input type="text" placeholder=""  onChange={handleChange} />
       </div>
       <div>
         <label htmlFor="us">US</label>
@@ -39,7 +49,7 @@ export default function App() {
         <p>
           It was 94 fahrenheit outside, so {xItem} went for a walk. When they
           got to {yItem}, they stared in horror for a few moments, then {zItem}.
-          Bob saw the whole thing, but was not surprised — {xItem} weighs 300
+          {name} saw the whole thing, but was not surprised — {xItem} weighs 300
           pounds, and it was a hot day.
         </p>
       )}
