@@ -11,11 +11,32 @@ export default function App() {
   const [yItem, setY] = useState("");
   const [zItem, setZ] = useState("");
   const [ukus, setUKUS] = useState("us");
-  const [temp, setTemp] = useState("fahrenheit")
+  const [temp, setTemp] = useState;
+  const [tempType, setTempType] = useState("");
+  const [weight, setWeight] = useState;
+  const [weightType, setWeightType] = useState("")
 
   function randomValueFromArray(array){
     const random = Math.floor(Math.random()*array.length);
     return array[random];
+  }
+
+  function trans(){
+    const defaultTemp = 94;
+    const defaultTempType = "fahrenheit";
+    const defaultWeight = 300;
+    const defaultWeightType = "pounds";
+    if(ukus === "us"){
+      setTemp(defaultTemp);
+      setTempType(defaultTempType);
+      setWeight(defaultWeight);
+      setWeightType(defaultWeightType);
+    }else if(ukus === "uk"){
+      setTemp(Math.round((defaultTemp - 32) * (5 / 9))); //デフォルトの華氏を摂氏に変換します
+      setTempType("centigrade");
+      setWeight(defaultWeightMath.round(defaultWeight / 14));
+      setWeightType("stone");
+    }
   }
 
   /*
@@ -38,6 +59,7 @@ export default function App() {
     }else{
       setName("Bob");
     }
+    trans();
   }
   return (
     <>
@@ -56,10 +78,10 @@ export default function App() {
       </div>
       {showStory && (
         <p>
-          It was 94 fahrenheit outside, so {xItem} went for a walk. When they
+          It was {temp} {tempType} outside, so {xItem} went for a walk. When they
           got to {yItem}, they stared in horror for a few moments, then {zItem}.
-          {name} saw the whole thing, but was not surprised — {xItem} weighs 300
-          pounds, and it was a hot day.
+          {name} saw the whole thing, but was not surprised — {xItem} weights {weight}
+          {weightType}, and it was a hot day.
         </p>
       )}
     </>
