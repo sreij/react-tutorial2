@@ -11,10 +11,10 @@ export default function App() {
   const [yItem, setY] = useState("");
   const [zItem, setZ] = useState("");
   const [ukus, setUKUS] = useState("us");
-  const [temp, setTemp] = useState;
-  const [tempType, setTempType] = useState("");
-  const [weight, setWeight] = useState;
-  const [weightType, setWeightType] = useState("")
+  const [temp, setTemp] = useState(94);
+  const [tempType, setTempType] = useState("fahrenheit");
+  const [weight, setWeight] = useState(300);
+  const [weightType, setWeightType] = useState("pounds")
 
   function randomValueFromArray(array){
     const random = Math.floor(Math.random()*array.length);
@@ -32,22 +32,12 @@ export default function App() {
       setWeight(defaultWeight);
       setWeightType(defaultWeightType);
     }else if(ukus === "uk"){
-      setTemp(Math.round((defaultTemp - 32) * (5 / 9))); //デフォルトの華氏を摂氏に変換します
+      setTemp(Math.round((defaultTemp - 32) * (5.0 / 9.0))); //デフォルトの華氏を摂氏に変換します
       setTempType("centigrade");
-      setWeight(defaultWeightMath.round(defaultWeight / 14));
+      setWeight(Math.round(defaultWeight / 14.0));
       setWeightType("stone");
     }
   }
-
-  /*
-  function result(event){
-    if(event.target.value !== ""){
-      setName(event.target.value);
-    }else{
-      setName("Bob");
-    }
-  }
-    */
   
   function buttonClicked(event) {
     setShow(true);
